@@ -7,7 +7,7 @@ const Welcome = () => {
 
   return (
     <div>
-      <h1>Welcome {user.userName}</h1>
+      <h1>Welcome {user.name}</h1>
       {token && (<span>Your token is {token}</span>)}
       <br></br>
       <button onClick={() => getToken(apiRequest, "loginPopup")}>Get Token</button>

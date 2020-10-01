@@ -1,7 +1,7 @@
 export const msalConfig = {
     auth: {
-        clientId: "CLIENT-ID",
-        authority: 'AZURE-AD-URL',
+        clientId: "30438524-af83-4328-8f20-2385084a30de",
+        authority: 'https://login.microsoftonline.com/common/',
         redirectUri: 'http://localhost:3000/',
     },
     cache: {
@@ -12,12 +12,12 @@ export const msalConfig = {
 
 // Add here scopes for id token to be used at MS Identity Platform endpoints.
 export const loginRequest = {
-    scopes: ["openid", "profile", "User.Read"],
+    scopes: ["openid","profile"],
     forceRefresh: false // Set this to "true" to skip a cached token and go to the server to get a new token
 };
 
 // Add here scopes for id token to be used at MS Identity Platform endpoints.
 export const apiRequest = {
-    scopes: ["API-SCOPE"],
+    scopes: ["user.read"],
     forceRefresh: false // Set this to "true" to skip a cached token and go to the server to get a new token
 };

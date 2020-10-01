@@ -31,7 +31,7 @@ export const MsalProvider = ({
         {
             setLoading(false);
             if (response) {
-                setUser(pc.getAccount());
+                setUser(response.account);
                 setIsAuthenticated(true);
                 if(response.accessToken) {
                   setToken(response.accessToken);
@@ -42,8 +42,8 @@ export const MsalProvider = ({
             setLoginError(error);
         });
 
-        if (pc.getAccount()) {
-            setUser(pc.getAccount());
+        if (pc.account) {
+            setUser(pc.account);
             setIsAuthenticated(true);
         }
         // eslint-disable-next-line
@@ -57,8 +57,8 @@ export const MsalProvider = ({
             try {
                 await publicClient.loginPopup(loginRequest);
 
-                if (publicClient.getAccount()) {
-                    setUser(publicClient.getAccount());
+                if (publicClient.account) {
+                    setUser(publicClient.account);
                     setIsAuthenticated(true);
                 }
             } catch (error) {
